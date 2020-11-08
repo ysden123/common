@@ -1,0 +1,9 @@
+= common
+
+Common components
+
+== Build
+Run command
+```
+sbt publishLocal
+```
