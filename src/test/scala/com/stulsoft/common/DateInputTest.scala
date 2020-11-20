@@ -17,7 +17,7 @@ class DateInputTest extends AnyFunSuite {
   test("testDateTimeToTimestamp - full date time input") {
     val input = "2020-11-12 11:22:33"
     dateTimeToTimestamp(input) match {
-      case Success(tm) => assertResult(1605172953000L)(tm)
+      case Success(tm) => assertResult(1605180153000L)(tm)
       case Failure(exception) => fail(exception)
     }
   }
@@ -25,7 +25,7 @@ class DateInputTest extends AnyFunSuite {
   test("testDateTimeToTimestamp - only date input") {
     val input = "2020-11-12"
     dateTimeToTimestamp(input) match {
-      case Success(tm) => assertResult(1605132000000L)(tm)
+      case Success(tm) => assertResult(1605139200000L)(tm)
       case Failure(exception) => fail(exception)
     }
   }
