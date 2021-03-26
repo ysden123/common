@@ -2,9 +2,9 @@ import java.util.Calendar
 
 import sbt.Keys.{javacOptions, scalacOptions}
 
-ThisBuild / scalaVersion := "2.13.4"
+ThisBuild / scalaVersion := "2.13.5"
 ThisBuild / organization := "com.stulsoft"
-ThisBuild / version := "1.0.2"
+ThisBuild / version := "1.0.3"
 
 Compile / packageBin / packageOptions += Package.ManifestAttributes("Build-Date" -> Calendar.getInstance().getTime.toString)
 
