@@ -12,13 +12,13 @@ import scala.util.Try
 /**
  * @author Yuriy Stul
  */
-object DateInput {
+object DateInput:
   private lazy val dateTimeFormatter = new DateTimeFormatterBuilder()
     .appendPattern("yyyy-MM-dd HH:mm:ss")
     .toFormatter()
     .withZone(ZoneOffset.UTC)
 
-  def dateTimeToTimestamp(input: String): Try[Long] = {
+  def dateTimeToTimestamp(input: String): Try[Long] =
     Try {
       val dateTimeInput = """([0-9]{4}-[0-9]{2}-[0-9]{2}) ([0-9]{2}:[0-9]{2}:[0-9]{2})""".r
       val dateInput = """([0-9]{4}-[0-9]{2}-[0-9]{2})""".r
@@ -31,5 +31,4 @@ object DateInput {
           throw new RuntimeException("Invalid date/time format")
       }
     }
-  }
-}
+
