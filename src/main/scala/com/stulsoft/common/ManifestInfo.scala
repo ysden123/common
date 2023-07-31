@@ -64,7 +64,7 @@ case class ManifestInfo(groupId: String, artifactId: String) extends StrictLoggi
         Option(manifestAttrValue(manifest, "Implementation-Version"))
       case None => None
 
-  def buildDate():Option[String]=
+  def buildDate(): Option[String] =
     resourceWithManifest() match
       case Some(url) =>
         val is = url.openStream()
@@ -72,3 +72,14 @@ case class ManifestInfo(groupId: String, artifactId: String) extends StrictLoggi
         is.close()
         Option(manifestAttrValue(manifest, "Build-Date"))
       case None => None
+
+  def buildTitle(titleName: String): String =
+    val theVersion = version() match
+      case Some(version) => version
+      case _ => ""
+
+    val theBuildDate = buildDate() match
+      case Some(buildDate) => buildDate
+      case _ => ""
+
+    titleName + " " + theVersion + " " + theBuildDate
