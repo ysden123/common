@@ -2,14 +2,14 @@ import java.util.Calendar
 
 import sbt.Keys.{javacOptions, scalacOptions}
 
-ThisBuild / scalaVersion := "3.3.0"
+ThisBuild / scalaVersion := "3.3.1"
 ThisBuild / organization := "com.stulsoft"
-ThisBuild / version := "1.2.1"
+ThisBuild / version := "1.2.2"
 
 Compile / packageBin / packageOptions += Package.ManifestAttributes("Build-Date" -> Calendar.getInstance().getTime.toString)
 
 lazy val loggingVersion = "2.20.0"
-lazy val scalatestVersion = "3.2.15"
+lazy val scalatestVersion = "3.2.16"
 
 lazy val app = (project in file("."))
   .settings(
@@ -26,5 +26,4 @@ lazy val app = (project in file("."))
       "-deprecation",
       "-language:implicitConversions",
       "-language:postfixOps")
-
   )
