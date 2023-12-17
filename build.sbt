@@ -4,7 +4,7 @@ import sbt.Keys.{javacOptions, scalacOptions}
 
 ThisBuild / scalaVersion := "3.3.1"
 ThisBuild / organization := "com.stulsoft"
-ThisBuild / version := "1.2.2"
+ThisBuild / version := "1.3.1"
 
 Compile / packageBin / packageOptions += Package.ManifestAttributes("Build-Date" -> Calendar.getInstance().getTime.toString)
 
